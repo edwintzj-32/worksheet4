@@ -67,14 +67,14 @@ public class Maze
                     break;
             
                 default:
-                    System.out.println("MESSAGE 1"); // Invalid direction.
+                    System.out.println("You have no idea where you arre going."); // Invalid direction.
             }
             
             if(currentRow < 0 || currentCol < 0
                 || currentRow >= grid.length || currentCol >= grid[currentRow].length)
             {
                 done = true;
-                System.out.println("MESSAGE 2"); // Out of bounds.
+                System.out.println("You fall into the chasm of doom."); // Out of bounds.
             }
             else
             {
@@ -85,13 +85,13 @@ public class Maze
                 else if(grid[currentRow][currentCol] == WALL)
                 {
                     done = true;
-                    System.out.println("MESSAGE 3"); // Hit wall.
+                    System.out.println("Yoy stumble blindly into a solid concrete wall"); // Hit wall.
                 }
                 else if(grid[currentRow][currentCol] == END)
                 {
                     done = true;
                     solved = true;
-                    System.out.println("MESSAGE 4"); // Solved.
+                    System.out.println("SOLVED!"); // Solved.
                 }
                 else
                 {} // Do nothing
@@ -102,7 +102,7 @@ public class Maze
        
         if(!solved)
         {
-            System.out.println("MESSAGE 5"); // Did not reach the end.
+            System.out.println("You have failed to escape. Future archelogists gaze upon yout remains in bafflement."); // Did not reach the end.
         }
         
         GridViewer.view(grid);
